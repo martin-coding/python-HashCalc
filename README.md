@@ -1,2 +1,2 @@
 # python-HashCalc
-A simple GUI application for calculating hashes of files written in Python.
+A simple CLI application for calculating hashes of files written in Python.
