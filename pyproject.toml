@@ -1,0 +1,30 @@
+[project]
+name = "hash-calc"
+version = "0.1.0"
+description = "A simple CLI application for calculating hashes of files written in Python."
+readme = "README.md"
+authors = [
+    { name = "martin-coding", email = "martin.coding.public@gmail.com" }
+]
+requires-python = ">=3.12.8"
+dependencies = []
+
+[project.scripts]
+hash-calc = "hash_calc:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0.1",
+    "ruff>=0.8.3",
+]
+
+[tool.ruff]
+line-length = 150
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["D203", "D213", "COM812", "ISC001", "T201"]
