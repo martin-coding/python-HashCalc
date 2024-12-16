@@ -1,10 +1,10 @@
-name: pre-commit
+name: Lint, Format, Test
 
 on:
   push:
 
 jobs:
-  pre-commit:
+  check-code:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,3 +26,5 @@ jobs:
           key: pre-commit-3|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
       - name: Run pre-commit
         run: uv run pre-commit run --all-files --show-diff-on-failure
+      - name: Run tests
+        run: uv run pytest tests
